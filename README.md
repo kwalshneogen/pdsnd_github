@@ -6,10 +6,15 @@
 ### Project 2: Explore US Bikeshare Data
 
 ### Description
-In this project, newly learned python skills were used to analyze bike sharing usage patterns from Bikeshare data recorded in three US cities - Chicago, New York and Washington. 
+In this project, newly learned python skills were used to analyze bike sharing usage patterns from Bikeshare data recorded in three US cities - Chicago, New York and Washington.
 
 ### Files used
-Include the files used
+1. bikeshare.py
+2. Data Files
+    * chicago.csv
+    * new_york_city.csv
+    * washington.csv
+
 ### Credits
 In order to complete the project, I found these references useful:
 * https://knowledge.udacity.com/questions/62060
