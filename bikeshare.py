@@ -8,7 +8,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-def get_filters():
+def user_selection():
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -17,8 +17,8 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
-    # Get user input for city (chicago, new york city, washington). 
+    print('Hello! Let\'s explore some US bikeshare data for the cities Chicago, New York City and Washington!')
+    # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input('Enter the name of a city: Chicago, New York City or Washington ').lower()
         if city in (CITY_DATA.keys()):
@@ -36,6 +36,7 @@ def get_filters():
             break
         else:
             print('That is not a valid month.')
+
 
 
     # Get user input for day of week (all, monday, tuesday, ... sunday)
@@ -161,6 +162,7 @@ def user_stats(df):
     start_time = time.time()
 
 
+
     # Display counts of user types
     user_types = df['User Type'].value_counts()
     print('The number of bikesare rides per user type is listed below.\n', user_types)
@@ -172,6 +174,7 @@ def user_stats(df):
 
     except KeyError:
         print('There is no Gender data for the city Washington')
+
 
 
     # Display earliest, most recent, and most common year of birth
@@ -204,7 +207,7 @@ def display_raw_data(df):
 
 def main():
     while True:
-        city, month, day = get_filters()
+        city, month, day = user_selection()
         df = load_data(city, month, day)
 
         time_stats(df)
